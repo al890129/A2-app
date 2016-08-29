@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core'
+import {ControlGroup,Control,FormBuilder,Validators} from 'angular2/common'
 
 
 
@@ -7,5 +8,12 @@ import {Component} from 'angular2/core'
 })
 
 export class UsersFormComponent {
+	form: ControlGroup;
 
+	constructor(fb: FormBuilder){
+		this.form = fb.group({
+			name: ['',Validators.required],
+			email: ['',Validators.required]
+		})
+	}
 }
