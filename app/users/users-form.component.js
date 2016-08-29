@@ -1,4 +1,4 @@
-System.register(['angular2/core', './user.service'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,37 +10,27 @@ System.register(['angular2/core', './user.service'], function(exports_1, context
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, user_service_1;
-    var UsersComponent;
+    var core_1;
+    var UsersFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (user_service_1_1) {
-                user_service_1 = user_service_1_1;
             }],
         execute: function() {
-            UsersComponent = (function () {
-                function UsersComponent(_service) {
-                    this._service = _service;
+            UsersFormComponent = (function () {
+                function UsersFormComponent() {
                 }
-                UsersComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this._service.getUsers()
-                        .subscribe(function (users) { return _this.users = users; });
-                };
-                UsersComponent = __decorate([
+                UsersFormComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/users.component.html',
-                        providers: [user_service_1.UserService]
+                        templateUrl: 'app/users/users-form.component.html'
                     }), 
-                    __metadata('design:paramtypes', [user_service_1.UserService])
-                ], UsersComponent);
-                return UsersComponent;
+                    __metadata('design:paramtypes', [])
+                ], UsersFormComponent);
+                return UsersFormComponent;
             }());
-            exports_1("UsersComponent", UsersComponent);
+            exports_1("UsersFormComponent", UsersFormComponent);
         }
     }
 });
-//# sourceMappingURL=users.component.js.map
+//# sourceMappingURL=users-form.component.js.map

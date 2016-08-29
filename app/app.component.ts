@@ -5,12 +5,14 @@ import {RouteConfig} from 'angular2/router';
 
 import {NavbarComponent} from './navbar.component';
 import {HomeComponent} from './home.component';
-import {UsersComponent} from './users.component';
+import {UsersComponent} from './users/users.component';
 import {PostsComponent} from './posts.component';
+import {UsersFormComponent} from './users/users-form.component'
 
 @RouteConfig([
 		{path:'/',name:'Home',component: HomeComponent},
 		{path:'/users',name: 'Users',component: UsersComponent},
+		{path:'/users/new',name: 'NewUsers',component: UsersFormComponent},
 		{path: '/posts',name: 'Posts', component: PostsComponent},
 		{path: '/*other',name: 'Other', redirectTo: ['Home']}
 
