@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', './user-validator'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1;
+    var core_1, common_1, user_validator_1;
     var UsersFormComponent;
     return {
         setters:[
@@ -19,18 +19,21 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
             },
             function (common_1_1) {
                 common_1 = common_1_1;
+            },
+            function (user_validator_1_1) {
+                user_validator_1 = user_validator_1_1;
             }],
         execute: function() {
             UsersFormComponent = (function () {
                 function UsersFormComponent(fb) {
                     this.form = fb.group({
                         name: ['', common_1.Validators.required],
-                        email: ['', common_1.Validators.required]
+                        email: ['', common_1.Validators.compose([common_1.Validators.required, user_validator_1.UserValidators.hasToBeValidEmail])]
                     });
                 }
                 UsersFormComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/users/users-form.component.html'
+                        templateUrl: 'app/users/users-form.component.html',
                     }), 
                     __metadata('design:paramtypes', [common_1.FormBuilder])
                 ], UsersFormComponent);
