@@ -31,6 +31,11 @@ System.register(['angular2/core', 'angular2/common', './user-validator'], functi
                         email: ['', common_1.Validators.compose([common_1.Validators.required, user_validator_1.UserValidators.hasToBeValidEmail])]
                     });
                 }
+                UsersFormComponent.prototype.routerCanDeactivate = function (next, previous) {
+                    if (this.form.dirty) {
+                        return confirm("are you sure?");
+                    }
+                };
                 UsersFormComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/users/users-form.component.html',
